@@ -1,0 +1,274 @@
+:root{
+    --primary: #06a99d;
+    --secondary: #2c63ac;
+    --accent: #919fd6;
+    --background: white;
+    --text: #090505;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    gap: 10dvh;
+    align-items: center;
+    background-color: var(--background);
+    width: 100%;
+    height: 100dvh;
+    background: linear-gradient(-45deg, var(--primary), var(--secondary), var(--primary));
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+}
+
+@keyframes gradient{
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+
+.navbar{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10dvh;
+    z-index: 99999;
+    font-family: 'Outfit', sans-serif;
+}
+
+.namn{
+    display: grid;
+    place-items: center;
+    margin-left: 2dvh;
+    border-radius: 1dvh;
+    height: 5dvh;
+    width: auto;
+    font-size: 2.5dvh;
+    color: white;
+    pointer-events: none;
+}
+
+.login{
+    display: grid;
+    place-items: center;
+    margin-right: 2dvh;
+    border: white .5dvh solid;
+    border-radius: 1dvh;
+    height: 6dvh;
+    width: 15dvh;
+    font-size: 2.5dvh;
+    color: white;
+    cursor: pointer;
+}
+
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 90dvh;
+    width: 100%;
+    background-color: white;
+    margin-top: 10dvh;
+}
+
+.meny{
+    display: flex;
+    flex-direction: column;
+    height: 79dvh;
+    width: 25dvw;
+    border: .6dvh solid var(--secondary);
+    border-radius: 2dvh;
+    padding: 2dvh;
+}
+
+.title{
+    font-family: 'Outfit', sans-serif;
+    height: auto;
+}
+
+.menystuff{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2dvh;
+    height: 73dvh;
+    font-family: 'Fira Mono', sans-serif;
+}
+
+.tickets{
+    display: flex;
+    flex-direction: column;
+    height: 79dvh;
+    width: 60dvw;
+    border: .6dvh solid var(--secondary);
+    border-radius: 2dvh;
+    padding: 2dvh;
+}
+
+.ticketlist{
+    height: 73dvh;
+    overflow-y: scroll;
+}
+
+.holder{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5dvh;
+    width: 100%;
+    border-bottom: .5dvh grey solid;
+    background-color: rgb(230, 230, 230);
+    padding: 1dvh;
+}
+
+.emne{
+    display: flex;
+    gap: 5dvh;
+    width: auto;
+    height: 100%;
+    font-family: 'Fira Mono', sans-serif;
+}
+
+.venster{
+    display: flex;
+    align-items: center;
+    gap: 2dvh;
+    font-family: 'Fira Mono', sans-serif;
+}
+
+.prio{
+    height: 3dvh;
+    width: 3dvh;
+    background-color: green;
+}
+
+input[type="submit"]{
+    border: none;
+    background: var(--secondary);
+    color: white;
+    padding: .5dvh;
+    border-radius: .5dvh;
+    cursor: pointer;
+    font-family: 'Fira Mono', sans-serif;
+}
+
+.information{
+    display: flex;
+    flex-direction: column;
+    gap: 2dvh;
+}
+
+.tktname{
+    color:grey;
+}
+
+.ansvar{
+    color: grey;
+    height: 4dvh;
+    width: auto;
+}
+
+.prioriteten{
+    color: grey;
+    height: 4dvh;
+    width: auto;
+}
+
+.state{
+    color: grey;
+    height: 4dvh;
+    width: auto;
+}
+
+.beskrivningen{
+    color: grey;
+    width: 22dvw;
+    height: 35dvh;
+    overflow-wrap: break-word;
+}
+
+input[id="steng"]{
+    width: 100%;
+    height: 5dvh;
+    font-size: 3dvh;
+}
+
+.noinfo{
+    color: grey;
+}
+
+.toppen{
+    display: flex;
+    align-items: center;
+    gap: 2dvh;
+    height: 6dvh;
+}
+
+select{
+    cursor: pointer;
+    font-size: 1.5dvh;
+    padding: 3px;
+}
+
+.stangd-text {
+    color: gray;
+    font-weight: bold;
+}
+
+@media (max-width: 500px) { /*Mobilformat*/
+
+    .main {
+        flex-direction: column;
+        height: auto;
+        margin-top: 10dvh;
+        z-index: 9999999;
+    }
+
+    .meny, .tickets {
+        width: 90vw;
+        height: auto;
+        margin-bottom: 2dvh;
+        margin-top: 2dvh;
+    }
+
+    .holder {
+        flex-direction: column;
+        height: auto;
+        align-items: flex-start;
+    }
+
+    .emne {
+        flex-direction: column;
+        gap: 1dvh;
+        width: 100%;
+    }
+
+    .venster {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    input[type="submit"], input[id="steng"] {
+        width: 100%;
+        font-size: 2dvh;
+    }
+
+    .beskrivningen {
+        width: 100%;
+    }
+}
